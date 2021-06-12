@@ -18,18 +18,16 @@
 
 <body>
     <form action="" id="form-a">
-        <div class="form-group">
-            <label for="email">Email address:</label>
-            <input type="email" class="form-control" id="email">
-        </div>
-        <div class="form-inline">
+
+        <!-- <div class="form-inline">
             <label for="day">Date of Birth:</label>
-            <!-- max  and value set to today by js -->
-            <input type="date" class="form-control" id="day" value="" max="" required>
-            <span class="validity"></span>
-        </div>
-        <div class="form-inline">
-            <select name="month">
+            <!-- max  and value set to today by js 
+        <input type="date" class="form-control" id="day" value="" max="" required>
+        <span class="validity"></span>
+        </div> -->
+        <div class="form-inline p-2 ">
+            <input type="number" id="year" name="year" value="2021" max="2021">
+            <select name="month" id="month" onchange="populateDays(this.value)">
                <option value="" selected>Month
                <option value="January">Jan
                <option value="February">Feb
@@ -44,41 +42,13 @@
                <option value="November">Nov
                <option value="December">Dec
             </select>
-            <select name="day">
-               <option value="" selected>Day
-               <option value="1">01
-               <option value="2">02
-               <option value="3">03
-               <option value="4">04
-               <option value="5">05
-               <option value="6">06
-               <option value="7">07
-               <option value="8">08
-               <option value="9">09
-               <option value="10">10
-               <option value="11">11
-               <option value="12">12
-               <option value="13">13
-               <option value="14">14
-               <option value="15">15
-               <option value="16">16
-               <option value="17">17
-               <option value="18">18
-               <option value="19">19
-               <option value="20">20
-               <option value="21">21
-               <option value="22">22
-               <option value="23">23
-               <option value="24">24
-               <option value="25">25
-               <option value="26">26
-               <option value="27">27
-               <option value="28">28
-               <option value="29">29
-               <option value="30">30
-               <option value="31">31       
+            <select name="days" id="days">
+              
+              
+            
+             
             </select>
-            <input type="number" id="year" value="2021" max="2021">
+
         </div>
         </select>
         </div>
