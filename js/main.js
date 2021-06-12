@@ -79,11 +79,55 @@ function options(dayNum) {
         days.appendChild(option);
     }
 }
+var weekday = new Array(7);
+weekday["Monday"] = "0";
+weekday["Tuesday"] = "1";
+weekday["Wednesday"] = "2";
+weekday["Thursday"] = "3";
+weekday["Friday"] = "4";
+weekday["Saturday"] = "5";
+weekday["Sunday"] = "6";
+console.log(weekday["Friday"]);
+var monthnumber = new Array(12);
+monthnumber["January"] = "0";
+monthnumber["February"] = "1";
+monthnumber["March"] = "2";
+monthnumber["April"] = "3";
+monthnumber["May"] = "4";
+monthnumber["June"] = "5";
+monthnumber["July"] = "6";
+monthnumber["August"] = "7";
+monthnumber["September"] = "8";
+monthnumber["October"] = "9";
+monthnumber["Novomber"] = "10";
+monthnumber["December"] = "11";
+
+console.log(monthnumber["January"]);
 
 function GetDay() {
 
     let year = document.getElementById('year').value;
 
+    function centuryFromYear(year) {
+        // return parseInt(year).Math.Floor((year - 1) / 100 + 1);
+
+        if (year.toString().slice(-2) == '00') {
+            return year.toString().slice(0, 2);
+        } else {
+            return (Math.floor(+year / 100) + 1).toString();
+        };
+    }
+
+    function sliceback(year) {
+        // return parseInt(year).Math.Floor((year - 1) / 100 + 1);
+        return year.toString().slice(-2);
+        // if (year.toString().slice(-2) == '00') {
+        //     return year.toString().slice(-2);
+        // } else {
+        //     return (Math.floor(+year / 100) + 1).toString();
+        // };
+    }
+    // alert(sliceback(year));
     let month = document.getElementById('month').value;
 
     let days = document.getElementById('days').value;
@@ -101,7 +145,7 @@ function GetDay() {
     if ((month === "") && (days === "")) {
         alert(' date cant be null');
     } else {
+        day = (((parseInt(centuryFromYear(year)) / 4) - 2 * (parseInt(centuryFromYear(year) - 1) + ((5 * YY / 4)) + ((26 * ((parseInt(monthnumber[month]) + 1) + 1) / 10)) + (parseInt(days))) % 7))
 
     }
-
 }
