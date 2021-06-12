@@ -87,6 +87,23 @@ weekday["Thursday"] = "3";
 weekday["Friday"] = "4";
 weekday["Saturday"] = "5";
 weekday["Sunday"] = "6";
+
+var weekname = new Array(7);
+weekname[0] = "Monday";
+weekname[1] = "Tuesday";
+weekname[2] = "Wednesday";
+weekname[3] = "Thursday";
+weekname[4] = "Friday";
+weekname[5] = "Saturday";
+weekname[6] = "Sunday";
+
+weekday["Monday"] = "0";
+weekday["Tuesday"] = "1";
+weekday["Wednesday"] = "2";
+weekday["Thursday"] = "3";
+weekday["Friday"] = "4";
+weekday["Saturday"] = "5";
+weekday["Sunday"] = "6";
 console.log(weekday["Friday"]);
 var monthnumber = new Array(12);
 monthnumber["January"] = "0";
@@ -145,7 +162,9 @@ function GetDay() {
     if ((month === "") && (days === "")) {
         alert(' date cant be null');
     } else {
-        day = (((parseInt(centuryFromYear(year)) / 4) - 2 * (parseInt(centuryFromYear(year) - 1) + ((5 * YY / 4)) + ((26 * ((parseInt(monthnumber[month]) + 1) + 1) / 10)) + (parseInt(days))) % 7))
-
+        day = Math.abs(Math.ceil(((centuryFromYear(year) / 4) - 2 * centuryFromYear(year) - 1) + ((5 * sliceback(year) /
+            4)) + ((26 * (monthnumber[month] + 1) / 10)) + days) % 7);
+        // day = Math.floor(((parseInt(centuryFromYear(year)) / 4) - 2 * (parseInt(centuryFromYear(year) - 1) + ((5 * (parseInt(sliceback(year))) / 4)) + ((26 * ((parseInt(monthnumber[month] + 1) + 1) / 10)) + (parseInt(days))) % 7)));
+        alert("born on" + weekname[day]);
     }
 }
