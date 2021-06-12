@@ -87,9 +87,21 @@ function GetDay() {
     let month = document.getElementById('month').value;
 
     let days = document.getElementById('days').value;
+    if (document.getElementById('male').checked) {
+        rate_value = document.getElementById('male').value;
+        alert(rate_value);
+    } else if (document.getElementById('female').checked) {
+        rate_value = document.getElementById('female').value;
+        alert(rate_value);
+    } else {
+        rate_value = "";
+        alert("gender cant be null ")
 
-    // return year + month + days;
+    }
     if ((month === "") && (days === "")) {
         alert(' date cant be null');
+    } else {
+
     }
+
 }

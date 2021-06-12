@@ -32,3 +32,8 @@
     width: 150px;
     background-color: #ebebeb;
 }
+
+.form-group {
+    margin: auto;
+    text-align: center;
+}
