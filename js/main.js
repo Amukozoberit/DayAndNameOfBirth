@@ -190,6 +190,10 @@ function GetDay() {
             alert("Born on: " + weekname[day] + "\r\n" +
                 "Khan Name: " +
                 mapName[weekname[day]]);
+        } else {
+            alert("Born on: " + weekname[day] + "\r\n" +
+                "Khan Name: " +
+                mapFemaleName[weekname[day]]);
         }
         // day = Math.floor(((parseInt(centuryFromYear(year)) / 4) - 2 * (parseInt(centuryFromYear(year) - 1) + ((5 * (parseInt(sliceback(year))) / 4)) + ((26 * ((parseInt(monthnumber[month] + 1) + 1) / 10)) + (parseInt(days))) % 7)));
 
