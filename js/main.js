@@ -57,3 +57,39 @@ function createoptions(dayNum) {
         days.appendChild(option);
     }
 }
+// we check if its a leap year to ensure that the date changes too
+//to avoid situations like we changed to a leap year and its giving us february date as not leap
+
+function checkleap() {
+
+
+    if (month.value == "") {
+        console.log("dont edit");
+    } else {
+        populateDays(month.value);
+    }
+}
+
+function options(dayNum) {
+
+    for (i = 1; i <= dayNum; i++) {
+        var option = document.createElement('option');
+        option.textContent = i;
+        // document.getElementById('days').innerHTML = "";
+        days.appendChild(option);
+    }
+}
+
+function GetDay() {
+
+    let year = document.getElementById('year').value;
+
+    let month = document.getElementById('month').value;
+
+    let days = document.getElementById('days').value;
+
+    // return year + month + days;
+    if ((month === "") && (days === "")) {
+        alert(' date cant be null');
+    }
+}
