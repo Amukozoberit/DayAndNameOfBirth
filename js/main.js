@@ -15,5 +15,7 @@ document.getElementById('day').setAttribute('max', today);
 document.getElementById('day').setAttribute('value', today);
 
 function validateDate() {
+    if ((mm == 01) || (mm == 03) || (mm == 05) || (mm == 07) || (mm == 08) || (mm == 10) || (mm == 12)) {
 
+    }
 }
