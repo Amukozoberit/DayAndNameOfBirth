@@ -120,6 +120,27 @@ monthnumber["Novomber"] = "10";
 monthnumber["December"] = "11";
 
 console.log(monthnumber["January"]);
+var mapName = Array(7);
+mapName["Sunday"] = "kwasi";
+mapName["Monday"] = "Kwadwo";
+mapName["Tuesday"] = "Kwabena";
+mapName["Wednesday"] = "Kwaku";
+mapName["Thursday"] = "Yaw";
+mapName["Friday"] = "Kofi";
+mapName["Saturday"] = "Kwame";
+
+
+
+var mapFemaleName = Array(7);
+mapFemaleName["Sunday"] = "Akosua";
+mapFemaleName["Monday"] = "Adwoa";
+mapFemaleName["Tuesday"] = "Abenaa";
+mapFemaleName["Wednesday"] = "Akuu";
+mapFemaleName["Thursday"] = "Yaa";
+mapFemaleName["Friday"] = "Afua";
+mapFemaleName["Saturday"] = "Ama"
+
+
 
 function GetDay() {
 
@@ -149,13 +170,13 @@ function GetDay() {
 
     let days = document.getElementById('days').value;
     if (document.getElementById('male').checked) {
-        rate_value = document.getElementById('male').value;
-        alert(rate_value);
+        gender = document.getElementById('male').value;
+        alert(gender);
     } else if (document.getElementById('female').checked) {
-        rate_value = document.getElementById('female').value;
-        alert(rate_value);
+        gender = document.getElementById('female').value;
+        alert(gender);
     } else {
-        rate_value = "";
+        gender = "";
         alert("gender cant be null ")
 
     }
@@ -164,7 +185,13 @@ function GetDay() {
     } else {
         day = Math.abs(Math.ceil(((centuryFromYear(year) / 4) - 2 * centuryFromYear(year) - 1) + ((5 * sliceback(year) /
             4)) + ((26 * (monthnumber[month] + 1) / 10)) + days) % 7);
+        if (gender === "male") {
+
+            alert("Born on: " + weekname[day] + "\r\n" +
+                "Khan Name: " +
+                mapName[weekname[day]]);
+        }
         // day = Math.floor(((parseInt(centuryFromYear(year)) / 4) - 2 * (parseInt(centuryFromYear(year) - 1) + ((5 * (parseInt(sliceback(year))) / 4)) + ((26 * ((parseInt(monthnumber[month] + 1) + 1) / 10)) + (parseInt(days))) % 7)));
-        alert("born on" + weekname[day]);
+
     }
 }
