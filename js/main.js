@@ -79,6 +79,7 @@ function options(dayNum) {
         days.appendChild(option);
     }
 }
+// map week to number
 var weekday = new Array(7);
 weekday["Monday"] = "0";
 weekday["Tuesday"] = "1";
@@ -87,7 +88,7 @@ weekday["Thursday"] = "3";
 weekday["Friday"] = "4";
 weekday["Saturday"] = "5";
 weekday["Sunday"] = "6";
-
+// map number to week
 var weekname = new Array(7);
 weekname[0] = "Monday";
 weekname[1] = "Tuesday";
@@ -104,7 +105,7 @@ weekday["Thursday"] = "3";
 weekday["Friday"] = "4";
 weekday["Saturday"] = "5";
 weekday["Sunday"] = "6";
-console.log(weekday["Friday"]);
+// map month to number
 var monthnumber = new Array(12);
 monthnumber["January"] = "0";
 monthnumber["February"] = "1";
@@ -120,6 +121,7 @@ monthnumber["Novomber"] = "10";
 monthnumber["December"] = "11";
 
 console.log(monthnumber["January"]);
+//map day to name
 var mapName = Array(7);
 mapName["Sunday"] = "kwasi";
 mapName["Monday"] = "Kwadwo";
@@ -140,11 +142,38 @@ mapFemaleName["Thursday"] = "Yaa";
 mapFemaleName["Friday"] = "Afua";
 mapFemaleName["Saturday"] = "Ama"
 
+function validateDay() {
+    let month = document.getElementById('month').value;
+    let days = document.getElementById('days').value;
+    var year = document.getElementById("year").value;
+    var isLeap = new Date(year, 1, 29).getMonth() == 1;
+    if ((month === 'April' || month === 'June' || month === 'September' || month === 'November') && (days > 30)) {
+
+        alert('invalid date');
+    } else
+    if (month == "February") {
+        // If month is February, calculate whether it is a leap year or not
+
+        if ((isLeap) && days > 29) {
+            alert("invalid date");
+        } else if (days > 28) {
+            alert("invalid date");
+        }
+
+    } else if (days > 31) {
+        alert('invalid day')
+    }
+
+}
 
 
 function GetDay() {
 
     let year = document.getElementById('year').value;
+
+
+
+
 
     function centuryFromYear(year) {
         // return parseInt(year).Math.Floor((year - 1) / 100 + 1);
@@ -157,13 +186,9 @@ function GetDay() {
     }
 
     function sliceback(year) {
-        // return parseInt(year).Math.Floor((year - 1) / 100 + 1);
+
         return year.toString().slice(-2);
-        // if (year.toString().slice(-2) == '00') {
-        //     return year.toString().slice(-2);
-        // } else {
-        //     return (Math.floor(+year / 100) + 1).toString();
-        // };
+
     }
     // alert(sliceback(year));
     let month = document.getElementById('month').value;
