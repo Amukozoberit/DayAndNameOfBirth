@@ -36,14 +36,17 @@ function populateDays(month) {
     if (month === 'January' || month === 'March' || month === 'May' || month === 'July' || month === 'August' || month === 'October' || month === 'December') {
         dayNum = 31;
         createoptions(dayNum);
+
     } else if (month === 'April' || month === 'June' || month === 'September' || month === 'November') {
         dayNum = 30;
+        // document.getElementById('days').option.remove();
         createoptions(dayNum);
     } else {
         // If month is February, calculate whether it is a leap year or not
         var year = document.getElementById("year").value;
         var isLeap = new Date(year, 1, 29).getMonth() == 1;
         isLeap ? dayNum = 29 : dayNum = 28;
+        //document.getElementById('days').option.remove();
         createoptions(dayNum);
     }
 
@@ -51,9 +54,12 @@ function populateDays(month) {
 }
 
 function createoptions(dayNum) {
+    document.getElementById("days").options.length = 0;
+    //  document.getElementById('days').option.remove();
     for (i = 1; i <= dayNum; i++) {
         var option = document.createElement('option');
         option.textContent = i;
+
         days.appendChild(option);
     }
 }
