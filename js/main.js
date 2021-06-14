@@ -71,30 +71,23 @@ function options(dayNum) {
 }
 // map week to number
 var weekday = new Array(7);
-weekday["Monday"] = "0";
-weekday["Tuesday"] = "1";
-weekday["Wednesday"] = "2";
-weekday["Thursday"] = "3";
-weekday["Friday"] = "4";
-weekday["Saturday"] = "5";
-weekday["Sunday"] = "6";
+weekday["Monday"] = "1";
+weekday["Tuesday"] = "2";
+weekday["Wednesday"] = "3";
+weekday["Thursday"] = "4";
+weekday["Friday"] = "5";
+weekday["Saturday"] = "6";
+weekday["Sunday"] = "0";
 // map number to week
 var weekname = new Array(7);
-weekname[0] = "Monday";
-weekname[1] = "Tuesday";
-weekname[2] = "Wednesday";
-weekname[3] = "Thursday";
-weekname[4] = "Friday";
-weekname[5] = "Saturday";
-weekname[6] = "Sunday";
+weekname[1] = "Monday";
+weekname[2] = "Tuesday";
+weekname[3] = "Wednesday";
+weekname[4] = "Thursday";
+weekname[5] = "Friday";
+weekname[6] = "Saturday";
+weekname[0] = "Sunday";
 
-weekday["Monday"] = "0";
-weekday["Tuesday"] = "1";
-weekday["Wednesday"] = "2";
-weekday["Thursday"] = "3";
-weekday["Friday"] = "4";
-weekday["Saturday"] = "5";
-weekday["Sunday"] = "6";
 // map month to number
 var monthnumber = new Array(12);
 monthnumber["January"] = "0";
@@ -196,23 +189,26 @@ function GetDay() {
     if ((month === "") && (days === "")) {
         alert(' date cant be null');
     } else {
-        day = Math.abs(Math.ceil(((centuryFromYear(year) / 4) - 2 * centuryFromYear(year) - 1) + ((5 * sliceback(year) /
-            4)) + ((26 * (monthnumber[month] + 1) / 10)) + days) % 7);
-        if (gender === "male") {
 
-            alert("Born on: " + weekname[day] + "\r\n" +
+        // day = Math.abs(Math.ceil(((centuryFromYear(year) / 4) - 2 * centuryFromYear(year) - 1) + ((5 * sliceback(year) /
+        //     4)) + ((26 * (monthnumber[month] + 1) / 10)) + days) % 7);
+        if (gender === "male") {
+            var dat = new Date(month + '/' + days + '/' + year);
+            alert(dat + dat.getDay() + month);
+            alert("Born on: " + weekname[dat.getDay()] + "\r\n" +
                 "Khan Name: " +
-                mapName[weekname[day]]);
-        } else if (gender === "female") {
-            alert("Born on: " + weekname[day] + "\r\n" +
+                mapName[weekname[dat.getDay()]]);
+        } else
+        if (gender === "female") {
+            var dat = new Date(month + '/' + days + '/' + year);
+            alert(dat + dat.getDay() + month);
+            alert("Born on: " + weekname[dat.getDay()] + "\r\n" +
                 "Khan Name: " +
-                mapFemaleName[weekname[day]]);
+                mapFemaleName[weekname[dat.getDay()]]);
+
 
         }
         // day = Math.floor(((parseInt(centuryFromYear(year)) / 4) - 2 * (parseInt(centuryFromYear(year) - 1) + ((5 * (parseInt(sliceback(year))) / 4)) + ((26 * ((parseInt(monthnumber[month] + 1) + 1) / 10)) + (parseInt(days))) % 7)));
 
     }
 }
-$(document).ready(function() {
-    $('.toast').toast('show');
-});
