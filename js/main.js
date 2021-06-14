@@ -1,3 +1,59 @@
+//map day to name
+var mapName = Array(7);
+mapName["Sunday"] = "kwasi";
+mapName["Monday"] = "Kwadwo";
+mapName["Tuesday"] = "Kwabena";
+mapName["Wednesday"] = "Kwaku";
+mapName["Thursday"] = "Yaw";
+mapName["Friday"] = "Kofi";
+mapName["Saturday"] = "Kwame";
+
+
+// map week to number
+var weekday = new Array(7);
+weekday["Monday"] = "1";
+weekday["Tuesday"] = "2";
+weekday["Wednesday"] = "3";
+weekday["Thursday"] = "4";
+weekday["Friday"] = "5";
+weekday["Saturday"] = "6";
+weekday["Sunday"] = "0";
+
+// map month to number
+var monthnumber = new Array(12);
+monthnumber["January"] = "0";
+monthnumber["February"] = "1";
+monthnumber["March"] = "2";
+monthnumber["April"] = "3";
+monthnumber["May"] = "4";
+monthnumber["June"] = "5";
+monthnumber["July"] = "6";
+monthnumber["August"] = "7";
+monthnumber["September"] = "8";
+monthnumber["October"] = "9";
+monthnumber["Novomber"] = "10";
+monthnumber["December"] = "11";
+
+
+// map number to week
+var weekname = new Array(7);
+weekname[1] = "Monday";
+weekname[2] = "Tuesday";
+weekname[3] = "Wednesday";
+weekname[4] = "Thursday";
+weekname[5] = "Friday";
+weekname[6] = "Saturday";
+weekname[0] = "Sunday";
+
+var mapFemaleName = Array(7);
+mapFemaleName["Sunday"] = "Akosua";
+mapFemaleName["Monday"] = "Adwoa";
+mapFemaleName["Tuesday"] = "Abenaa";
+mapFemaleName["Wednesday"] = "Akuu";
+mapFemaleName["Thursday"] = "Yaa";
+mapFemaleName["Friday"] = "Afua";
+mapFemaleName["Saturday"] = "Ama"
+
 function validateDate() {
     if ((mm == 01) || (mm == 03) || (mm == 05) || (mm == 07) || (mm == 08) || (mm == 10) || (mm == 12)) {
         dayNumb = 31;
@@ -69,61 +125,12 @@ function options(dayNum) {
         days.appendChild(option);
     }
 }
-// map week to number
-var weekday = new Array(7);
-weekday["Monday"] = "1";
-weekday["Tuesday"] = "2";
-weekday["Wednesday"] = "3";
-weekday["Thursday"] = "4";
-weekday["Friday"] = "5";
-weekday["Saturday"] = "6";
-weekday["Sunday"] = "0";
-// map number to week
-var weekname = new Array(7);
-weekname[1] = "Monday";
-weekname[2] = "Tuesday";
-weekname[3] = "Wednesday";
-weekname[4] = "Thursday";
-weekname[5] = "Friday";
-weekname[6] = "Saturday";
-weekname[0] = "Sunday";
 
-// map month to number
-var monthnumber = new Array(12);
-monthnumber["January"] = "0";
-monthnumber["February"] = "1";
-monthnumber["March"] = "2";
-monthnumber["April"] = "3";
-monthnumber["May"] = "4";
-monthnumber["June"] = "5";
-monthnumber["July"] = "6";
-monthnumber["August"] = "7";
-monthnumber["September"] = "8";
-monthnumber["October"] = "9";
-monthnumber["Novomber"] = "10";
-monthnumber["December"] = "11";
+
 
 console.log(monthnumber["January"]);
-//map day to name
-var mapName = Array(7);
-mapName["Sunday"] = "kwasi";
-mapName["Monday"] = "Kwadwo";
-mapName["Tuesday"] = "Kwabena";
-mapName["Wednesday"] = "Kwaku";
-mapName["Thursday"] = "Yaw";
-mapName["Friday"] = "Kofi";
-mapName["Saturday"] = "Kwame";
 
 
-
-var mapFemaleName = Array(7);
-mapFemaleName["Sunday"] = "Akosua";
-mapFemaleName["Monday"] = "Adwoa";
-mapFemaleName["Tuesday"] = "Abenaa";
-mapFemaleName["Wednesday"] = "Akuu";
-mapFemaleName["Thursday"] = "Yaa";
-mapFemaleName["Friday"] = "Afua";
-mapFemaleName["Saturday"] = "Ama"
 
 function validateDay() {
     let month = document.getElementById('month').value;
