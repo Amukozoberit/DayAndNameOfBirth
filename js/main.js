@@ -194,14 +194,14 @@ function GetDay() {
         //     4)) + ((26 * (monthnumber[month] + 1) / 10)) + days) % 7);
         if (gender === "male") {
             var dat = new Date(month + '/' + days + '/' + year);
-            alert(dat + dat.getDay() + month);
+            // alert(dat + dat.getDay() + month);
             alert("Born on: " + weekname[dat.getDay()] + "\r\n" +
                 "Khan Name: " +
                 mapName[weekname[dat.getDay()]]);
         } else
         if (gender === "female") {
             var dat = new Date(month + '/' + days + '/' + year);
-            alert(dat + dat.getDay() + month);
+            // alert(dat + dat.getDay() + month);
             alert("Born on: " + weekname[dat.getDay()] + "\r\n" +
                 "Khan Name: " +
                 mapFemaleName[weekname[dat.getDay()]]);
