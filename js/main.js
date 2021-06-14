@@ -184,10 +184,10 @@ function GetDay() {
     let days = document.getElementById('days').value;
     if (document.getElementById('male').checked) {
         gender = document.getElementById('male').value;
-        alert(gender);
+        // alert(gender);
     } else if (document.getElementById('female').checked) {
         gender = document.getElementById('female').value;
-        alert(gender);
+        // alert(gender);
     } else {
         gender = "";
         alert("gender cant be null ")
@@ -207,9 +207,7 @@ function GetDay() {
             alert("Born on: " + weekname[day] + "\r\n" +
                 "Khan Name: " +
                 mapFemaleName[weekname[day]]);
-            // document.write("Born on: " + weekname[day] + "\r\n" +
-            //     "Khan Name: " +
-            //     mapFemaleName[weekname[day]]);
+
         }
         // day = Math.floor(((parseInt(centuryFromYear(year)) / 4) - 2 * (parseInt(centuryFromYear(year) - 1) + ((5 * (parseInt(sliceback(year))) / 4)) + ((26 * ((parseInt(monthnumber[month] + 1) + 1) / 10)) + (parseInt(days))) % 7)));
 
