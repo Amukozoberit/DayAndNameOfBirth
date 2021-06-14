@@ -215,3 +215,6 @@ function GetDay() {
 
     }
 }
+$(document).ready(function() {
+    $('.toast').toast('show');
+});
